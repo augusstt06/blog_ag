@@ -2,7 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-// 필요 라이브러리 설치하기
+// 필요 라이브러리 설치하기 (redux 등)
+// 환경변수 설정하기
 
 const inter = Inter({ subsets: ["latin"] });
 
