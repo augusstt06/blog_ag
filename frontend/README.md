@@ -20,6 +20,21 @@
 
    - express
 
+3. 사용 라이브러리
+
+   - Redux, react-redux, redux-devtools-extension
+
+   ```bash
+   # redux, react-redux
+   npm install redux react-redux
+
+   # next redux wrapper
+   npm install next-redux-wrapper
+
+   # redux devtools
+   npm install -D redux-devtools-extension
+   ```
+
 ## 3️⃣ 앱 설계
 
 1. 핵심 기능
