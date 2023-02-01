@@ -61,7 +61,7 @@ src/
 │  └── nav.tsx (메뉴바)
 │
 ├── /pages
-│  ├── index.tsx (메인 페이지 | 소개 글)
+│  ├── index.tsx (메인 페이지 | 소개 글 | SSG)
 │  └── /post
 │       ├── index.tsx (게시글 등록 페이지)
 │       └── [title].tsx (게시글 조회 페이지 | 포스트 번호 또는 제목을 기반으로 동적 라우팅)
