@@ -1,4 +1,3 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { wrapper } from "@/store";
 // html Body 부분
