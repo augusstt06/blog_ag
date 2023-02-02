@@ -15,6 +15,7 @@ export default function Header() {
             padding: 5px 20px;
             align-items: center;
             height: 4rem;
+            background: gray;
           }
         `}
       </style>

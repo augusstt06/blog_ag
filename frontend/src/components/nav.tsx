@@ -11,7 +11,7 @@ export default function Nav() {
     <div>
       <ul className="nav justify-content-center">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page">
+          <a className="nav-link active text-dark " aria-current="page">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -25,7 +25,7 @@ export default function Nav() {
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link">
+          <a className="nav-link text-dark">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -39,13 +39,14 @@ export default function Nav() {
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link">Link</a>
+          <a className="nav-link text-dark">Link</a>
         </li>
       </ul>
       {/* <style jsx>
         {`
           div {
-            background: blue;
+            background : red
+          }
           }
         `}
       </style> */}

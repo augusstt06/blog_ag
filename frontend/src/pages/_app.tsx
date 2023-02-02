@@ -1,4 +1,3 @@
-import "../styles/global.css";
 import type { AppProps } from "next/app";
 import { wrapper } from "@/store";
 import Header from "@/components/header";
