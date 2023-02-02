@@ -1,4 +1,3 @@
-// import "@/styles/"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/reducers/rootReducer";
 import { useCallback } from "react";
@@ -24,8 +23,6 @@ export default function Home() {
   return (
     <>
       <div className="home">
-        {/* <Nav /> */}
-
         <div>리듀서 테스트</div>
         <div>밸류 : {value}</div>
         <button onClick={upEvent}>업</button>
