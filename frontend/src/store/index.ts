@@ -16,18 +16,3 @@ const makeStore: MakeStore<{}> = () => {
 };
 
 export const wrapper = createWrapper<{}>(makeStore, { debug: true });
-// const bindMiddleWare = (middleware: Middleware[]): StoreEnhancer => {
-//   if (process.env.NODE_ENV !== "production") {
-//     const { composeWithDevtools } = require("redux-devtools-extension");
-//     return composeWithDevtools(applyMiddleware(...middleware));
-//   } else {
-//     return applyMiddleware(...middleware);
-//   }
-// };
-
-// const makeStore: MakeStore<{}> = () => {
-//   const store = createStore(rootReducer, {}, bindMiddleWare([]));
-//   return store;
-// };
-
-// export const wrapper = createWrapper<{}>(makeStore, { debug: true });
