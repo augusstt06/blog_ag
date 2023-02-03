@@ -9,18 +9,18 @@ export default function Post() {
     setWrite(e.target.value);
     setPost({ post: write });
   };
-  console.log(post, "?");
-  const registerPost = async () => {
-    try {
-      const res = await axios.post("http://localhost:3001", post, {
-        withCredentials: true,
-      });
-      console.log(res);
-      console.log("성공?");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // console.log(post, "?");
+  // const registerPost = async () => {
+  //   try {
+  //     const res = await axios.post("http://localhost:3001", post, {
+  //       withCredentials: true,
+  //     });
+  //     console.log(res);
+  //     console.log("성공?");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
   return (
     <>
       <div>등록</div>
@@ -29,7 +29,7 @@ export default function Post() {
         value={write}
         onChange={posting}
       />
-      <button onClick={registerPost}>등록</button>
+      {/* <button onClick={registerPost}>등록</button> */}
     </>
   );
 }
