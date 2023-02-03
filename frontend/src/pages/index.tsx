@@ -2,8 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store/reducers/rootReducer";
 import { useCallback } from "react";
 import { countUp, countDown } from "@/store/reducers/counter";
-
-import Nav from "@/components/nav";
 // 필요 라이브러리 설치하기 (redux 등)
 // 환경변수 설정하기
 // 메인 화면은 심플한 페이지네임이랑 애니메이션으로 구성하고
