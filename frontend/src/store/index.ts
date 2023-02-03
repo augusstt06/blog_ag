@@ -10,9 +10,9 @@ const bindMiddleware = (middleware: Middleware[]): StoreEnhancer => {
   return applyMiddleware(...middleware);
 };
 
-const makeStore: MakeStore<{}> = () => {
+const makeStore: MakeStore<any> = () => {
   const store = createStore(rootReducer, {}, bindMiddleware([]));
   return store;
 };
 
-export const wrapper = createWrapper<{}>(makeStore, { debug: true });
+export const wrapper = createWrapper<any>(makeStore, { debug: true });
