@@ -9,10 +9,12 @@ app
   .prepare()
   .then(() => {
     const server = express();
+
     server.get("*", (req: Request, res: Response) => {
       return handle(req, res);
     });
-    server.listen(3001, (err?: any) => {
+    // server.get("/post", (req, res) => {});
+    server.listen(3000, (err?: any) => {
       if (err) throw err;
       console.log("Server Ready");
     });

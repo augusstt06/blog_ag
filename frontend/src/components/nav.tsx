@@ -1,13 +1,13 @@
-import useDetectClose from "@/hook/useDetectClose";
+// import useDetectClose from "@/hook/useDetectClose";
 import Link from "next/link";
 import { useRef } from "react";
 
 export default function Nav() {
-  const navRef = useRef(null);
-  const [isOpen, setIsOpen] = useDetectClose(navRef, false);
-  const openNav = () => {
-    setIsOpen(!isOpen);
-  };
+  // const navRef = useRef(null);
+  // const [isOpen, setIsOpen] = useDetectClose(navRef, false);
+  // const openNav = () => {
+  //   setIsOpen(!isOpen);
+  // };
   return (
     <div>
       <ul className="nav justify-content-center">

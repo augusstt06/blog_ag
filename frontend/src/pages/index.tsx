@@ -10,21 +10,21 @@ export default function Home() {
   const dispatch = useDispatch();
   const { value } = useSelector((state: RootState) => state.counterReducer);
 
-  const upEvent = useCallback(() => {
-    dispatch(countUp());
-  }, []);
+  // const upEvent = useCallback(() => {
+  //   dispatch(countUp());
+  // }, []);
 
-  const downEvent = useCallback(() => {
-    dispatch(countDown());
-  }, []);
+  // const downEvent = useCallback(() => {
+  //   dispatch(countDown());
+  // }, []);
 
   return (
     <>
       <div className="home">
         <div>리듀서 테스트</div>
         <div>밸류 : {value}</div>
-        <button onClick={upEvent}>업</button>
-        <button onClick={downEvent}>다운</button>
+        {/* <button onClick={upEvent}>업</button>
+        <button onClick={downEvent}>다운</button> */}
       </div>
       ;
     </>

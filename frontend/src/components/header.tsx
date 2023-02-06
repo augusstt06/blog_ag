@@ -9,7 +9,9 @@ export default function Header() {
         <Link href="/">로고</Link>
       </div>
       <div>검색창 - 컴포넌트</div>
-      <Nav />
+      <div>
+        <Nav />
+      </div>
       <style jsx>
         {`
           div {
