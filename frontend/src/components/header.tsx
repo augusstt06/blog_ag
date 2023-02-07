@@ -8,7 +8,9 @@ export default function Header() {
       <div>
         <Link href="/">로고</Link>
       </div>
-      <div>검색창 - 컴포넌트</div>
+      <div>
+        <a>검색창 - 컴포넌트</a>
+      </div>
       <div>
         <Nav />
       </div>
