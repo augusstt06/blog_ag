@@ -10,10 +10,14 @@ app
   .then(() => {
     const server = express();
 
+    server.get("/test", (req: Request, res: Response) => {
+      console.log("test connect");
+    });
+
     server.get("*", (req: Request, res: Response) => {
       return handle(req, res);
     });
-    // server.get("/post", (req, res) => {});
+
     server.listen(3000, (err?: any) => {
       if (err) throw err;
       console.log("Server Ready");
