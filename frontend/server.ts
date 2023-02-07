@@ -13,7 +13,10 @@ app
     server.get("/post", (req: Request, res: Response) => {
       console.log("포스팅 페이지 ");
     });
-
+    server.post("/post", (req: Request, res: Response) => {
+      console.log("포스트 요청");
+      return res;
+    });
     server.get("*", (req: Request, res: Response) => {
       return handle(req, res);
     });
