@@ -10,8 +10,8 @@ app
   .then(() => {
     const server = express();
 
-    server.get("/test", (req: Request, res: Response) => {
-      console.log("test connect");
+    server.get("/post", (req: Request, res: Response) => {
+      console.log("포스팅 페이지 ");
     });
 
     server.get("*", (req: Request, res: Response) => {

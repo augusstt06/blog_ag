@@ -1,17 +1,21 @@
 // 글 등록 페이지
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Post() {
   const [write, setWrite] = useState<string>("");
   const [post, setPost] = useState<object>({ post: "" });
-  const testConnect = async () => {
+
+  const postingPage = async () => {
     try {
-      const res = await axios.get("/test");
+      const res = await axios.get("/post");
     } catch (err) {
       console.log(err);
     }
   };
+  useEffect(() => {
+    postingPage();
+  }, []);
   const posting = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setWrite(e.target.value);
     setPost({ post: write });
@@ -30,7 +34,6 @@ export default function Post() {
   // };
   return (
     <>
-      <button onClick={testConnect}>Test</button>
       <div>등록</div>
       <textarea
         placeholder="게시글을 입력하세요"
