@@ -6,16 +6,6 @@ export default function Post() {
   const [write, setWrite] = useState<string>("");
   const [post, setPost] = useState<object>({ post: "" });
 
-  const postingPage = async () => {
-    try {
-      const res = await axios.get("/post");
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    postingPage();
-  }, []);
   const posting = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setWrite(e.target.value);
     setPost({ post: write });
@@ -25,7 +15,7 @@ export default function Post() {
       const res = await axios.post("/post", post, {
         withCredentials: true,
       });
-      console.log(res);
+      console.log(res.data);
       console.log("성공?");
     } catch (err) {
       console.log(err);
@@ -39,7 +29,7 @@ export default function Post() {
         value={write}
         onChange={posting}
       />
-      {/* <button onClick={registerPost}>등록</button> */}
+      <button onClick={registerPost}>등록</button>
     </>
   );
 }
