@@ -12,11 +12,10 @@ export default function Post() {
   };
   const registerPost = async () => {
     try {
-      const res = await axios.post("/post", post, {
+      const res = await axios.post("/api/posting", post, {
         withCredentials: true,
       });
       console.log(res.data);
-      console.log("성공?");
     } catch (err) {
       console.log(err);
     }
