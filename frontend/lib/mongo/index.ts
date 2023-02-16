@@ -1,0 +1,28 @@
+import { MongoClient } from "mongodb";
+
+const URI = process.env.NEXT_PUBLIC_MONGODB_URI;
+const options = {};
+
+if (!URI) throw new Error("Please add your MOngo DB URI to .env.local");
+
+let client = new MongoClient(URI, options);
+let clientPromise: Promise<MongoClient>;
+
+if (process.env.NODE_ENV === "development") {
+  let globalWithMongoClientPromise = global as typeof globalThis & {
+    _mongoClientPromise: Promise<MongoClient>;
+  };
+
+  if (!globalWithMongoClientPromise._mongoClientPromise) {
+    client = new MongoClient(URI);
+    globalWithMongoClientPromise._mongoClientPromise = client.connect();
+  }
+
+  clientPromise = globalWithMongoClientPromise._mongoClientPromise;
+} else {
+  // In production mode, it's best to not use a global variable.
+  client = new MongoClient(URI);
+  clientPromise = client.connect();
+}
+
+export default clientPromise;
