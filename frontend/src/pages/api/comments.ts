@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getPostings } from "@lib/mongo/comments";
+import { getComments } from "@lib/mongo/comments";
 
 export default async function hanlder(
   req: NextApiRequest,
@@ -7,7 +7,7 @@ export default async function hanlder(
 ) {
   if (req.method === "GET") {
     try {
-      const { comments, error } = await getPostings();
+      const { comments, error } = await getComments();
       if (error) throw new Error(error);
       return res.status(200).json({ comments });
     } catch (error) {

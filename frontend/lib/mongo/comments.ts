@@ -20,12 +20,17 @@ async function init() {
   await init();
 })();
 
-export async function getPostings() {
+export async function getComments() {
   try {
     if (!comments) await init();
     const result = await comments
       .find({})
-      .limit(20)
+      // .limit(20)
+      // .map((data: any) => ({
+      //   ...data,
+      //   name: data.name.toString(),
+      //   email: data.email.toString(),
+      // }))
       // .map((user: any) => ({ ...user, _id: user._id.toString() }))
       .toArray();
 

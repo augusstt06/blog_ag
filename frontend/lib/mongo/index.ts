@@ -8,7 +8,7 @@ if (!URI) throw new Error("Please add your MOngo DB URI to .env.local");
 let client = new MongoClient(URI, options);
 let clientPromise: Promise<MongoClient>;
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV !== "production") {
   let globalWithMongoClientPromise = global as typeof globalThis & {
     _mongoClientPromise: Promise<MongoClient>;
   };
