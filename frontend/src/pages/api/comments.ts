@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getPostings } from "@lib/mongo/posting";
+import { getPostings } from "@lib/mongo/comments";
 
 export default async function hanlder(
   req: NextApiRequest,
@@ -7,17 +7,13 @@ export default async function hanlder(
 ) {
   if (req.method === "GET") {
     try {
-      const { postings, error } = await getPostings();
+      const { comments, error } = await getPostings();
       if (error) throw new Error(error);
-      return res.status(200).json({ postings });
+      return res.status(200).json({ comments });
     } catch (error) {
       return res.status(500).json({ error });
     }
   }
   res.setHeader("Allow", ["GET"]);
   res.status(425).end(`Method ${req.method} is not allowed`);
-  // if (req.method !== "POST") {
-  //   res.status(405).json({ message: "Post method is allowed!!" });
-  // }
-  // res.status(200).json({ post: "포스팅 테스트" });
 }

@@ -2,7 +2,7 @@ import clientPromise from ".";
 
 let client: any;
 let db: any;
-let postings: any;
+let comments: any;
 
 async function init() {
   if (db) return;
@@ -10,7 +10,7 @@ async function init() {
   try {
     client = await clientPromise;
     db = await client.db();
-    postings = await db.collection("postings");
+    comments = await db.collection("comments");
   } catch (err) {
     throw new Error("Fail to connect database");
   }
@@ -22,15 +22,15 @@ async function init() {
 
 export async function getPostings() {
   try {
-    if (!postings) await init();
-    const result = await postings
+    if (!comments) await init();
+    const result = await comments
       .find({})
       .limit(20)
-      .map((user: any) => ({ ...user, _id: user._id.toString() }))
+      // .map((user: any) => ({ ...user, _id: user._id.toString() }))
       .toArray();
 
-    return { postings: result };
+    return { comments: result };
   } catch (err) {
-    return { error: "Fail to fetch postings!" };
+    return { error: "Fail to fetch comments!" };
   }
 }
