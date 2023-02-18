@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getComments } from "@lib/mongo/comments";
+import { getComments } from "../../../lib/mongo/comments";
 
 export default async function hanlder(
   req: NextApiRequest,
