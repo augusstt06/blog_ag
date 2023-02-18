@@ -24,17 +24,24 @@ export default async function hanlder(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  try {
-    const client = await clientPromise;
-    const db = client.db("sample_mflix");
-    const movies = await db
-      .collection("movies")
-      .find({})
-      .sort({ metacritic: -1 })
-      .limit(10)
-      .toArray();
-    res.json(movies);
-  } catch (err) {
-    console.error(err);
+  if (req.method === "GET") {
+    try {
+      const client = await clientPromise;
+      const db = client.db("sample_mflix");
+      const movies = await db
+        .collection("movies")
+        .find({})
+        .sort({ metacritic: -1 })
+        .limit(10)
+        .toArray();
+      // res.json(movies);
+      res.status(200).json(movies);
+    } catch (err) {
+      console.error(err);
+      res.status(500);
+    }
+  } else {
+    res.setHeader("Allow", ["GET"]);
+    res.status(425).end(`Method ${req.method} is not allowed`);
   }
 }
