@@ -2,7 +2,7 @@ import clientPromise from ".";
 
 let client: any;
 let db: any;
-let comments: any;
+let movies: any;
 
 async function init() {
   if (db) return;
@@ -10,7 +10,7 @@ async function init() {
   try {
     client = await clientPromise;
     db = await client.db();
-    comments = await db.collection("comments");
+    movies = await db.collection("movies");
   } catch (err) {
     throw new Error("Fail to connect database");
   }
@@ -20,22 +20,22 @@ async function init() {
   await init();
 })();
 
-export async function getComments() {
+export async function getMovies() {
   try {
-    if (!comments) await init();
-    const result = await comments
+    if (!movies) await init();
+    const result = await movies
       .find({})
-      // .limit(20)
+      .limit(20)
       // .map((data: any) => ({
       //   ...data,
       //   name: data.name.toString(),
       //   email: data.email.toString(),
       // }))
-      // .map((user: any) => ({ ...user, _id: user._id.toString() }))
+      .map((user: any) => ({ ...user, _id: user._id.toString() }))
       .toArray();
 
-    return { comments: result };
+    return { movies: result };
   } catch (err) {
-    return { error: "Fail to fetch comments!" };
+    return { error: "Fail to fetch movies!" };
   }
 }
