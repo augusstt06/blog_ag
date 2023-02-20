@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 
   clientPromise = globalWithMongoClientPromise._mongoClientPromise;
 } else {
-  // console.log("Start to connect....");
+  console.log("Start to connect....");
   client = new MongoClient(URI);
   clientPromise = client.connect();
 }
