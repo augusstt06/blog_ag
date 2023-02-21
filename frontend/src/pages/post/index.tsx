@@ -10,9 +10,10 @@ export default function Post() {
     setWrite(e.target.value);
     setPost({ post: write });
   };
+  console.log(post, "??");
   const registerPost = async () => {
     try {
-      const res = await axios.post("/api/posting", post, {
+      const res = await axios.post("/api/post", post, {
         withCredentials: true,
       });
       console.log(res.data);
