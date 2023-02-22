@@ -1,12 +1,14 @@
 import Nav from "./nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
+import Login from "./login";
 
 export default function Header() {
   return (
     <div>
       <div>
         <Link href="/">로고</Link>
+        <Login />
       </div>
       <div>
         <a>검색창 - 컴포넌트</a>
