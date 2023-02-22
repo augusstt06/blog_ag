@@ -15,10 +15,7 @@ export default function Header() {
       <div>
         <a>검색창 - 컴포넌트</a>
       </div>
-      <div>
-        {status === "unauthenticated" ? <div>X</div> : <Nav />}
-        {/* <Nav /> */}
-      </div>
+      <div>{status === "unauthenticated" ? <div>X</div> : <Nav />}</div>
       <style jsx>
         {`
           div {

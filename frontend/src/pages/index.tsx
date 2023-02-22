@@ -35,12 +35,6 @@ export default function Home() {
       <button onClick={downEvent}>다운</button> */}
         </div>
       )}
-      {/* <div className="home">
-        <div>리듀서 테스트</div>
-        <div>밸류 : {value}</div> */}
-      {/* <button onClick={upEvent}>업</button>
-        <button onClick={downEvent}>다운</button> */}
-      {/* </div> */};
     </>
   );
 }
