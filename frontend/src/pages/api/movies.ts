@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../../lib/mongo";
 
+// 테스트용
 export default async function moviesApi(
   req: NextApiRequest,
   res: NextApiResponse
