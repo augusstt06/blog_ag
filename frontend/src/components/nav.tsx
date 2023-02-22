@@ -1,6 +1,5 @@
 // import useDetectClose from "@/hook/useDetectClose";
 import Link from "next/link";
-import { useRef } from "react";
 import Image from "next/image";
 import Git from "../asset/github.svg";
 import Mail from "../asset/mail.svg";
