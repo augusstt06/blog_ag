@@ -1,8 +1,13 @@
 // 글 등록 페이지
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Post() {
+  const router = useRouter();
+  const { status } = useSession();
+
   const main = useRef(null);
   const title = useRef(null);
 
@@ -27,6 +32,11 @@ export default function Post() {
       console.log(err);
     }
   };
+  useEffect(() => {
+    if (status !== "authenticated") {
+      router.push("/");
+    }
+  }, []);
 
   return (
     <>

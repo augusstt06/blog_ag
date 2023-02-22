@@ -4,6 +4,7 @@ import Image from "next/image";
 import Git from "../asset/github.svg";
 import Mail from "../asset/mail.svg";
 import Write from "../asset/write.svg";
+import { useSession } from "next-auth/react";
 
 export default function Nav() {
   // const navRef = useRef(null);
@@ -11,6 +12,9 @@ export default function Nav() {
   // const openNav = () => {
   //   setIsOpen(!isOpen);
   // };
+  const email = process.env.NEXT_PUBLIC_EMAIL;
+  const { status, data } = useSession();
+
   return (
     <div>
       <ul className="nav justify-content-center">
@@ -24,12 +28,15 @@ export default function Nav() {
             <Image src={Mail} width="20" height="20" alt="mail" />
           </a>
         </li>
-
-        <li className="nav-item">
-          <Link className="nav-link text-dark" href="/post">
-            <Image src={Write} width="20" height="20" alt="write" />
-          </Link>
-        </li>
+        {status === "authenticated" && data.user.email === email ? (
+          <li className="nav-item">
+            <Link className="nav-link text-dark" href="/post">
+              <Image src={Write} width="20" height="20" alt="write" />
+            </Link>
+          </li>
+        ) : (
+          <></>
+        )}
       </ul>
     </div>
   );
