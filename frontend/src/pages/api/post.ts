@@ -22,10 +22,12 @@ export default async function postApi(
     }
   } else if (req.method === "POST") {
     try {
-      console.log("db에 넣을 객체 : ", req.body);
-      //   const post = await db.collection("post").insertOne(req.body).
+      // req.body 객체 형태 잘 조정 하기
+      await db.collection("post").insertOne(req.body);
+      res.status(200).json("db 등록 완료");
     } catch (err) {
       console.log(err);
+      res.status(500).json("요청 실패");
     }
   }
 }
