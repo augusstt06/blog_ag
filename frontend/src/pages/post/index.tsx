@@ -10,7 +10,7 @@ export default function Post() {
     setWrite(e.target.value);
     setPost({ post: write });
   };
-  console.log(post, "??");
+  console.log(post, "요청 보낼 객체");
   const registerPost = async () => {
     try {
       const res = await axios.post("/api/post", post, {
