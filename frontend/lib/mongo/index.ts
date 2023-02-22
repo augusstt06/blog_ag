@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== "production") {
   console.log("Start to connect....");
   client = new MongoClient(URI);
   clientPromise = client.connect();
+  console.log("Mongo Db connection successful!");
 }
 
 export default clientPromise;
