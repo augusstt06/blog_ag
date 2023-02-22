@@ -2,8 +2,10 @@ import Nav from "./nav";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import Login from "./login";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
+  const { status } = useSession();
   return (
     <div>
       <div>
@@ -14,7 +16,8 @@ export default function Header() {
         <a>검색창 - 컴포넌트</a>
       </div>
       <div>
-        <Nav />
+        {status === "unauthenticated" ? <div>X</div> : <Nav />}
+        {/* <Nav /> */}
       </div>
       <style jsx>
         {`
