@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Git from "../asset/github.svg";
-import Mail from "../asset/mail.svg";
+import Post from "../asset/postcard.svg";
 import Write from "../asset/write.svg";
 import { useSession } from "next-auth/react";
 
@@ -28,7 +28,7 @@ export default function Nav() {
         </li>
         <li className="nav-item">
           <a className="nav-link text-dark">
-            <Image src={Mail} width="20" height="20" alt="mail" />
+            <Image src={Post} width="20" height="20" alt="mail" />
           </a>
         </li>
         {status === "authenticated" && data.user.email === email ? (
