@@ -13,9 +13,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default function Detail({ data }: any) {
+  console.log(data);
   return (
     <>
-      <div>테스트</div>
+      <div>상세</div>
     </>
   );
 }
