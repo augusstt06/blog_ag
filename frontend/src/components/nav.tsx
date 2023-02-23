@@ -14,14 +14,17 @@ export default function Nav() {
   // };
   const email = process.env.NEXT_PUBLIC_EMAIL;
   const { status, data } = useSession();
-
+  const gitUrl = process.env.NEXT_PUBLIC_GIT;
+  const gmail = process.env.NEXT_PUBLIC_GMAIL;
   return (
     <div>
       <ul className="nav justify-content-center">
         <li className="nav-item">
-          <a className="nav-link active text-dark " aria-current="page">
+          <Link className="nav-link text-dark" href={gitUrl}>
+            {/* <a className="nav-link active text-dark " aria-current="page"> */}
             <Image src={Git} width="20" height="20" alt="git" />
-          </a>
+            {/* </a> */}
+          </Link>
         </li>
         <li className="nav-item">
           <a className="nav-link text-dark">
@@ -34,9 +37,7 @@ export default function Nav() {
               <Image src={Write} width="20" height="20" alt="write" />
             </Link>
           </li>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </ul>
     </div>
   );
