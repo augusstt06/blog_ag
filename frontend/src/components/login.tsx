@@ -2,7 +2,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Login() {
   const { data } = useSession();
-  console.log("로그인 데이터", data);
+  // console.log("로그인 데이터", data);
 
   return (
     <div>
