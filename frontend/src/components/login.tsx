@@ -1,5 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function Login() {
   const { data } = useSession();
