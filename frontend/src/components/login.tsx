@@ -4,6 +4,7 @@ import { useEffect } from "react";
 export default function Login() {
   const { data } = useSession();
 
+  // 시간 지나면 로그아웃 좀 손보기
   const autoLogout = () => {
     if (data !== null && data !== undefined) {
       setTimeout(() => {
