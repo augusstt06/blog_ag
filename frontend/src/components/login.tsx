@@ -22,13 +22,17 @@ export default function Login() {
       }, 100000);
     }
   };
+  const logout = () => {
+    signOut();
+    alert("로그아웃 되었습니다.");
+  };
   useEffect(() => {
     autoLogout();
   });
   return (
     <div>
       {data?.user ? (
-        <button type="button" onClick={() => signOut()}>
+        <button type="button" onClick={logout}>
           Google Logout
         </button>
       ) : (
