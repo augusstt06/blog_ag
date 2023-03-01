@@ -1,13 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import Login from "./login";
-
 import { useSession } from "next-auth/react";
 
 export default function Header() {
   const email = process.env.NEXT_PUBLIC_EMAIL;
   const { status, data } = useSession();
   const gitUrl = process.env.NEXT_PUBLIC_GIT;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
