@@ -15,7 +15,6 @@ export async function getStaticProps() {
 export default function Home({ backgroundUrl }: any) {
   const dispatch = useDispatch();
   const { value } = useSelector((state: RootState) => state.counterReducer);
-
   return (
     <>
       <header className="py-5 bg-image-full">
