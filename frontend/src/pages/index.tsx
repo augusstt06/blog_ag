@@ -5,8 +5,14 @@ import kuku from "../asset/kuku.jpg";
 
 // 환경변수 설정하기
 // 메인 화면은 심플한 페이지네임이랑 애니메이션으로 구성하고
+export async function getStaticProps() {
+  const backgroundUrl = "https://source.unsplash.com/wfh8dDlNFOk/1600x900";
 
-export default function Home() {
+  return {
+    props: { backgroundUrl: backgroundUrl },
+  };
+}
+export default function Home({ backgroundUrl }: any) {
   const dispatch = useDispatch();
   const { value } = useSelector((state: RootState) => state.counterReducer);
 
@@ -21,8 +27,8 @@ export default function Home() {
             width="150"
             height="150"
           />
-          <h1 className="text-white fs-3 fw-bolder">Full Width Pics</h1>
-          <p className="text-white-50 mb-0">Landing Page Template</p>
+          <h1 className="text-white fs-3 fw-bolder">augusstt06의 블로그</h1>
+          <p className="text-white-50 mb-0">프로그래밍, 취미생활</p>
         </div>
       </header>
 
@@ -80,7 +86,7 @@ export default function Home() {
       <style jsx>
         {`
           header {
-            background-image: url("https://source.unsplash.com/wfh8dDlNFOk/1600x900");
+            background-image: url(${backgroundUrl});
           }
         `}
       </style>
