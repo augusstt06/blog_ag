@@ -46,7 +46,7 @@ export default function Header() {
                 <>
                   <li className="nav-item">
                     <Link className="nav-link" href="/post/list">
-                      Post
+                      Articles
                     </Link>
                   </li>{" "}
                 </>
@@ -68,7 +68,7 @@ export default function Header() {
               {status === "authenticated" && data.user.email === email ? (
                 <li className="nav-item">
                   <Link className="nav-link" href="/post">
-                    Post
+                    Posting
                   </Link>
                 </li>
               ) : (
