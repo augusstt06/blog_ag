@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { wrapper } from "@/store";
-import Header from "@/components/header";
 import { SessionProvider } from "next-auth/react";
+import Layout from "@/layout";
 
 // html Body 부분
 
@@ -9,8 +9,9 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <SessionProvider session={pageProps.session}>
-        <Header />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </SessionProvider>
     </>
   );

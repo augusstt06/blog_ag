@@ -5,3 +5,7 @@ export interface ActionProps {
 export interface CounterState {
   value: number;
 }
+
+export interface LayoutProps {
+  children: React.ReactNode;
+}
