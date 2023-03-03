@@ -28,6 +28,7 @@ export default function Post() {
 
       title.current.value = null;
       main.current.value = null;
+      router.push("/post/list");
     } catch (err) {
       console.log(err);
     }
