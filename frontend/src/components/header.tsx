@@ -30,7 +30,7 @@ export default function Header() {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link" href="/">
-                  <a>Home</a>
+                  Home
                 </Link>
               </li>
               <li className="nav-item">
