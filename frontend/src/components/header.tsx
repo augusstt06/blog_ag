@@ -12,7 +12,7 @@ export default function Header() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <a className="navbar-brand" href="#!">
+          <a className="navbar-brand">
             <Login />
           </a>
           <button
@@ -29,35 +29,29 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">
-                  <Link className="nav-link text-white" href="/">
-                    Home
-                  </Link>
-                </a>
+                <Link className="nav-link" href="/">
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link className="nav-link text-white" href={gitUrl}>
-                    Git
-                  </Link>
-                </a>
+                <Link className="nav-link" href={gitUrl}>
+                  Git
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link className="nav-link text-white" href="/">
-                    Contact
-                  </Link>
-                </a>
+                <Link className="nav-link" href="/">
+                  Contact
+                </Link>
               </li>
               {status === "authenticated" && data.user.email === email ? (
                 <li className="nav-item">
-                  <a className="nav-link">
-                    <Link className="nav-link text-white" href="/post">
-                      Post
-                    </Link>
-                  </a>
+                  <Link className="nav-link" href="/post">
+                    Post
+                  </Link>
                 </li>
-              ) : null}
+              ) : (
+                <></>
+              )}
             </ul>
           </div>
         </div>
