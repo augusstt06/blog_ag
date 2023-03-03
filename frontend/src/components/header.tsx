@@ -2,11 +2,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import Login from "./login";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const email = process.env.NEXT_PUBLIC_EMAIL;
   const { status, data } = useSession();
   const gitUrl = process.env.NEXT_PUBLIC_GIT;
+  const router = useRouter();
+  console.log(router);
+  const currentUrl = router.route;
 
   return (
     <>
@@ -38,11 +42,29 @@ export default function Header() {
                   Git
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="/">
-                  Contact
-                </Link>
-              </li>
+              {currentUrl !== "/post/list" ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="/post/list">
+                      Post
+                    </Link>
+                  </li>{" "}
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="/post/list">
+                      Programming
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="/post/list">
+                      LostArk
+                    </Link>
+                  </li>
+                </>
+              )}
+
               {status === "authenticated" && data.user.email === email ? (
                 <li className="nav-item">
                   <Link className="nav-link" href="/post">
