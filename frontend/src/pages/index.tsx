@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/store/reducers/rootReducer";
 import Image from "next/image";
 import kuku from "../asset/kuku.jpg";
 import { FaReact } from "react-icons/fa";
@@ -146,11 +144,13 @@ export default function Home({ backgroundUrl }: any) {
         </div>
       </section>
       {/* ------------------------- */}
+
+      {/* 자기 소개 */}
       <section className="py-5">
         <div className="container my-5">
           <div className="row justify-content-center">
             <div className="col-lg-6">
-              <h2>Full Width Backgrounds</h2>
+              <h2>To become a Front-End developer</h2>
               <p className="lead">
                 A single, lightweight helper className allows you to add
                 engaging, full width background images to sections of your page.
