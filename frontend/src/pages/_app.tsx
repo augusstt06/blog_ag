@@ -4,8 +4,6 @@ import { SessionProvider } from "next-auth/react";
 import Layout from "@/layout";
 import "../styles/nav.css";
 
-// html Body 부분
-
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
