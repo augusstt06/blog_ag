@@ -145,15 +145,15 @@ export default function Home({ backgroundUrl }: any) {
       </section>
       {/* ------------------------- */}
 
-      {/* 자기 소개 */}
+      {/* 자기 소개 및 간단한 제작 동기*/}
       <section className="py-5">
         <div className="container my-5">
           <div className="row justify-content-center">
             <div className="col-lg-6">
               <h2>To become a Front-End developer</h2>
               <p className="lead">
-                A single, lightweight helper className allows you to add
-                engaging, full width background images to sections of your page.
+                안녕하세요 프론트엔드 개발 공부를 하고있는 대학생입니다.
+                <br />
               </p>
               <p className="mb-0">
                 The universe is almost 14 billion years old, and, wow! Life had
