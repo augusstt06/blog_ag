@@ -31,11 +31,16 @@ export default function Detail({ data }: any) {
   };
   return (
     <>
-      <div>
-        <p>제목 : {title}</p>
-        <p>내용 : {main}</p>
-        <button onClick={deleteData}>삭제</button>
-      </div>
+      <section className="py-5">
+        <div className="container my-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-6">
+              <h2>{title}</h2>
+              <p className="mb-0">{main}</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
