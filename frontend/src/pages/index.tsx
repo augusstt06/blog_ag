@@ -17,6 +17,7 @@ export async function getStaticProps() {
     props: { backgroundUrl: backgroundUrl },
   };
 }
+
 export default function Home({ backgroundUrl }: any) {
   const [mount, setMounted] = useState(false);
 
