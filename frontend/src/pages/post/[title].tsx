@@ -31,16 +31,18 @@ export default function Detail({ data }: any) {
   };
   return (
     <>
-      <section className="py-5">
+      <div>test</div>
+      {/* <section className="py-5">
         <div className="container my-5">
           <div className="row justify-content-center">
             <div className="col-lg-6">
               <h2>{title}</h2>
+              <br />
               <p className="mb-0">{main}</p>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
