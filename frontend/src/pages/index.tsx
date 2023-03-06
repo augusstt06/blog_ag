@@ -8,7 +8,7 @@ import { SiNextdotjs } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
 import { DiJavascript1 } from "react-icons/di";
 
-// Hydration Err : mount 변수 생성 후, useEffect훅으로 하여금 최초 렌더링시 mount 변수를 true로 바꾸어 컴포넌트의 return에 조건부 렌더링을 실시.
+// Hydration Err : mount 변수 생성 후, useEffect훅으로 하여금 최초 렌더링시 mount 변수를 true로 바꾸어 컴포넌트의 return에 조건부 렌더링을 실시
 
 export async function getStaticProps() {
   const backgroundUrl = "https://source.unsplash.com/wfh8dDlNFOk/1600x900";
