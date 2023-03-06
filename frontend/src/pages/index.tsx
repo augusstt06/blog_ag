@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import kuku from "../asset/kuku.jpg";
 import { FaReact } from "react-icons/fa";
@@ -15,6 +16,8 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ backgroundUrl }: any) {
+  const [mount, setMounted] = useState(false);
+
   const language_stack = [
     {
       image: <DiJavascript1 size={80} />,
@@ -80,7 +83,10 @@ export default function Home({ backgroundUrl }: any) {
     },
   ];
 
-  return (
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  return mount ? (
     <>
       <header className="py-5 bg-image-full">
         {/* <div className="text-center my-5"> */}
@@ -99,6 +105,7 @@ export default function Home({ backgroundUrl }: any) {
         </div>
       </header>
       {/* -------태크 스택 소개 ------*/}
+
       <section className="page-section" id="services">
         <div className="container px-4 px-lg-5">
           <h1 className="text-center mt-0">
@@ -116,7 +123,7 @@ export default function Home({ backgroundUrl }: any) {
                   <div className="mb-2">
                     <i className="bi-gem fs-1 text-primary"></i>
                   </div>
-                  {data.image}
+                  <a>{data.image}</a>
                   <h3 className="h4 mb-2">{data.name}</h3>
                   <p className="text-muted mb-0">{data.introduction}</p>
                 </div>
@@ -207,5 +214,7 @@ export default function Home({ backgroundUrl }: any) {
         `}
       </style>
     </>
+  ) : (
+    <>Page Loading...</>
   );
 }
