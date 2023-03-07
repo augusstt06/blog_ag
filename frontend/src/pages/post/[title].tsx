@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import axios from "axios";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
@@ -24,6 +24,8 @@ export default function Detail({ data }: any) {
 
   const email = process.env.NEXT_PUBLIC_EMAIL;
 
+  const viewContentRef = useRef<HTMLDivElement>(null);
+
   const deleteData = async () => {
     try {
       const res = await axios.delete("/api/post/delete", { data });
@@ -34,6 +36,13 @@ export default function Detail({ data }: any) {
       console.log(err);
     }
   };
+  useEffect(() => {
+    if (viewContentRef.current) {
+      viewContentRef.current.innerHTML = `<h3>본문</h3>`;
+      viewContentRef.current.innerHTML += main;
+      console.log("??");
+    }
+  });
   return (
     <>
       <section className="py-5">
@@ -42,7 +51,7 @@ export default function Detail({ data }: any) {
             <div className="col-lg-6">
               <h2>{title}</h2>
               <br />
-              <p className="mb-0">{main}</p>
+              <div ref={viewContentRef} />
             </div>
             {status === "authenticated" && session.user.email === email ? (
               <button onClick={deleteData}>삭쥉</button>
