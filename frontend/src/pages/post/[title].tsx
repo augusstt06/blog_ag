@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 
 // 한글 제목일때 생각해서 바꾸기 => id 변수 생성?
+// 게시글 확인 => 가독성 좋게 CSS 조정
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const query = context.query;
