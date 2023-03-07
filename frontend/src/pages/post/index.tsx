@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import TextEditor from "@/components/textEditor";
 
+// 작성하는 게시글의 미리보기 가독성 좋게 CSS 조정하기
 export default function Post() {
   const router = useRouter();
   const { status } = useSession();
