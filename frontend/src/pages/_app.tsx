@@ -4,6 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import Layout from "@/layout";
 import "../styles/nav.css";
 import "react-quill/dist/quill.snow.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 function App({ Component, pageProps }: AppProps) {
   return (
