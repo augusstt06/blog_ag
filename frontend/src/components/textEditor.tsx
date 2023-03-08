@@ -5,6 +5,7 @@ const Quill_NoSSR = dynamic(import("react-quill"), {
   loading: () => <p>Loading...</p>,
 });
 const modules = {
+  syntax: true,
   toolbar: [
     [{ header: [1, 2, false] }, { header: "2" }, { font: [String] }],
     [{ size: [String] }],
@@ -15,7 +16,7 @@ const modules = {
       { indent: "-1" },
       { indent: "+1" },
     ],
-    ["link", "image", "video"],
+    ["link", "image", "video", "code-block"],
     ["clean"],
   ],
 };
@@ -35,6 +36,7 @@ const formats = [
   "link",
   "image",
   "video",
+  "code-block",
 ];
 
 const TextEditor = (props: any) => {
