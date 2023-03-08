@@ -39,28 +39,28 @@ export default function Detail({ data }: any) {
   };
   useEffect(() => {
     if (viewContentRef.current) {
-      viewContentRef.current.innerHTML = `<h3>본문</h3>`;
+      viewContentRef.current.innerHTML = ``;
       viewContentRef.current.innerHTML += main;
-      console.log("??");
     }
   });
   return (
     <>
-      <section className="py-5">
-        <div className="container my-5">
-          <div className="row justify-content-center">
-            <div className="col-lg-6">
-              <h2>{title}</h2>
-              <br />
-              <div ref={viewContentRef} />
-            </div>
-            {status === "authenticated" && session.user.email === email ? (
-              <button onClick={deleteData}>삭쥉</button>
-            ) : (
-              <></>
-            )}
-          </div>
+      <section className="m-5 page-section text-left">
+        <div className="text-left">
+          <h2 className="text-left mt-0">
+            <em>{title}</em>
+          </h2>
         </div>
+        <hr className="divider" />
+        <div className="text-left" ref={viewContentRef} />
+
+        {status === "authenticated" && session.user.email === email ? (
+          <button className="btn btn-danger" onClick={deleteData}>
+            Delete
+          </button>
+        ) : (
+          <></>
+        )}
       </section>
     </>
   );

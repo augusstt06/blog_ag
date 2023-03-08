@@ -91,7 +91,8 @@ export default function Home({ backgroundUrl }: any) {
   }, []);
   return mount ? (
     <>
-      <header className="py-5 bg-image-full">
+      {/* margin-bottom 적용되는지 확인하기  // 원래 스타일 header태그에 margin-bottom : 10px*/}
+      <header className="py-5 bg-image-full mb-5">
         {/* <div className="text-center my-5"> */}
         <div className="text-center">
           <Image
@@ -212,7 +213,6 @@ export default function Home({ backgroundUrl }: any) {
           header {
             background-image: url(${backgroundUrl});
             height: 40vh;
-            margin-bottom: 10px;
           }
         `}
       </style>
