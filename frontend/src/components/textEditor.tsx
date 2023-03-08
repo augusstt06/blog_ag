@@ -1,11 +1,25 @@
 import dynamic from "next/dynamic";
+import hljs from "highlight.js/lib/core";
+// import "highlight.js/styles/atom-one-dark.css";
+import javascript from "highlight.js/lib/languages/javascript";
+import python from "highlight.js/lib/languages/python";
+import typescript from "highlight.js/lib/languages/typescript";
+import c from "highlight.js/lib/languages/c";
 
 const Quill_NoSSR = dynamic(import("react-quill"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
 });
+
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("python", python);
+hljs.registerLanguage("typescript", typescript);
+hljs.registerLanguage("c", c);
+
 const modules = {
-  syntax: true,
+  syntax: {
+    highlight: (text: any) => hljs.highlightAuto(text).value,
+  },
   toolbar: [
     [{ header: [1, 2, false] }, { header: "2" }, { font: [String] }],
     [{ size: [String] }],
