@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import hljs from "highlight.js/lib/core";
-// import "highlight.js/styles/atom-one-dark.css";
 import javascript from "highlight.js/lib/languages/javascript";
 import python from "highlight.js/lib/languages/python";
 import typescript from "highlight.js/lib/languages/typescript";
