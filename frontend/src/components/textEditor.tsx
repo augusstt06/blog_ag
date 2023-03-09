@@ -15,6 +15,23 @@ hljs.registerLanguage("python", python);
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("c", c);
 
+const imageHandler = () => {
+  const input = document.createElement("input");
+  input.setAttribute("type", "file");
+  input.setAttribute("accept", "image/*");
+  input.click();
+
+  input.addEventListener("change", async () => {
+    const file = input.files[0];
+    const formData = new FormData();
+    formData.append("img", file);
+    console.log(formData, "?");
+    // try{
+    //   const result = await axios.post()
+    // }
+  });
+};
+
 const modules = {
   syntax: {
     highlight: (text: any) => hljs.highlightAuto(text).value,
@@ -32,6 +49,9 @@ const modules = {
     ["link", "image", "video", "code-block"],
     ["clean"],
   ],
+  handlers: {
+    image: imageHandler,
+  },
 };
 
 const formats = [
