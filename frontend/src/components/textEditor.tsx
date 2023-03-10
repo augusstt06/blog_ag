@@ -5,6 +5,7 @@ import python from "highlight.js/lib/languages/python";
 import typescript from "highlight.js/lib/languages/typescript";
 import c from "highlight.js/lib/languages/c";
 
+// 이미지 리사이즈 모듈 설정하기..
 const Quill_NoSSR = dynamic(import("react-quill"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
