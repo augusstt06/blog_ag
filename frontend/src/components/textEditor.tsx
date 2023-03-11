@@ -5,7 +5,7 @@ import python from "highlight.js/lib/languages/python";
 import typescript from "highlight.js/lib/languages/typescript";
 import c from "highlight.js/lib/languages/c";
 
-// 이미지 리사이즈 모듈 설정하기..
+// 이미지 리사이즈 모듈 설정하기 => 레퍼런스가 아예없고 관련 모듈이 버전호환이 되지 않아 일단은 보류
 const Quill_NoSSR = dynamic(import("react-quill"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
