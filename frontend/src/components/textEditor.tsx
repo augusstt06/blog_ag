@@ -21,14 +21,7 @@ let modules = {
   ImageResize: {
     parchment: Quill.import("parchment"),
   },
-  // imageResize: {
-  //   displayStyles: {
-  //     backgroundColor: "black",
-  //     border: "none",
-  //     color: "white",
-  //   },
-  //   modules: ["Resize", "DisplaySize", "Toolbar"],
-  // },
+
   syntax: {
     highlight: (text: any) => hljs.highlightAuto(text).value,
   },
@@ -65,7 +58,6 @@ let formats = [
   "imageResize",
 ];
 const TextEditor = (props: any) => {
-  // const { content, setContent } = props;
   return (
     <>
       <ReactQuill
@@ -82,80 +74,3 @@ const TextEditor = (props: any) => {
   );
 };
 export default TextEditor;
-// const Quill = dynamic(() => import("react-quill"), {
-//   ssr: false,
-// });
-// const TextEditor = ({ props }: any) => {
-//   const { content, setContent } = props;
-
-//   // const [enableEditor, setEnableEditor] = useState(false);
-
-//   const loadQuill = async () => {
-//     return new Promise(async (resolve, reject) => {
-//       // const Quill = await require("react-quill").Quill;
-
-//       const ImageResize = (await import("quill-image-resize-module-ts"))
-//         .default;
-//       resolve({ Quill, ImageResize });
-//     }).then(({ Quill, ImageResize }: any) => {
-//       Quill.register("modules/imageResize", ImageResize);
-//       return;
-//     });
-//     // .then((value) => {
-//     //   setEnableEditor(true);
-//     // });
-//   };
-
-//   useEffect(() => {
-//     loadQuill();
-//   }, []);
-
-//   return (
-//     <>
-//       <ReactQuill
-//         value={content}
-//         onChange={setContent}
-//         modules={quillModules}
-//         formats={quillFormat}
-//       />
-//     </>
-//   );
-// };
-// export default TextEditor;
-
-// const modules = {
-//   syntax: {
-//     highlight: (text: any) => hljs.highlightAuto(text).value,
-//   },
-//   toolbar: [
-//     [{ header: [1, 2, false] }, { header: "2" }, { font: [String] }],
-//     [{ size: [String] }],
-//     ["bold", "italic", "underline", "strike", "blockquote"],
-//     [
-//       { list: "ordered" },
-//       { list: "bullet" },
-//       { indent: "-1" },
-//       { indent: "+1" },
-//     ],
-//     ["link", "image", "video", "code-block"],
-//     ["clean"],
-//   ],
-// };
-
-// const formats = [
-//   "header",
-//   "font",
-//   "size",
-//   "bold",
-//   "italic",
-//   "underline",
-//   "strike",
-//   "blockquote",
-//   "list",
-//   "bullet",
-//   "indent",
-//   "link",
-//   "image",
-//   "video",
-//   "code-block",
-// ];
