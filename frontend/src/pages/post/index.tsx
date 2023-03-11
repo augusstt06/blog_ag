@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import TextEditor from "@/components/textEditor";
+
+import dynamic from "next/dynamic";
 
 // 작성하는 게시글의 미리보기 가독성 좋게 CSS 조정하기
 export default function Post() {
@@ -15,8 +16,11 @@ export default function Post() {
 
   // 작성글을 html로 하여금 미리 볼수 있게 하는 변수
   const [content, setContent] = useState("");
-
+  const TextEditor_dy = dynamic(() => import("@/components/textEditor"), {
+    ssr: false,
+  });
   const viewContainerRef = useRef<HTMLDivElement>(null);
+
   const registerPost = async () => {
     try {
       const res = await axios.post(
@@ -44,6 +48,7 @@ export default function Post() {
     if (status !== "authenticated") {
       router.push("/");
     }
+
     if (viewContainerRef.current) {
       viewContainerRef.current.innerHTML = `<h3>작성 글미리보기</h3>`;
       viewContainerRef.current.innerHTML += content;
@@ -60,7 +65,7 @@ export default function Post() {
       <br />
       <button onClick={registerPost}>등록</button>
       <div>
-        <TextEditor content={content} setContent={setContent} />
+        <TextEditor_dy content={content} setContent={setContent} />
       </div>
       <br />
       <div ref={viewContainerRef} />
