@@ -54,14 +54,18 @@ export default function Post() {
 
   return (
     <>
-      <div className="row gx-4 gx-lg-5 justify-content-center">
-        <textarea placeholder="제목을 입력하세요" ref={title} />
+      <div className="row gx-4 gx-lg-5 justify-content-around">
+        <div className="mt-5">
+          <div className="mb-2">
+            <textarea placeholder="제목을 입력하세요" ref={title} />
+          </div>
+        </div>
 
-        <button onClick={registerPost}>등록</button>
         <div className="col-lg-3 col-md-6 text-center">
           <TextEditor content={content} setContent={setContent} />
         </div>
         <div className="col-lg-3 col-md-6 text-center" ref={viewContainerRef} />
+        <button onClick={registerPost}>등록</button>
       </div>
     </>
   );
