@@ -44,7 +44,6 @@ export default function Header() {
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
-                  href="#"
                   id="dropdown01"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -92,70 +91,6 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container">
-          <a className="navbar-brand">
-            <Login />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link" href="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href={gitUrl}>
-                  Git
-                </Link>
-              </li>
-              {currentUrl !== "/post/list" ? (
-                <>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="/post/list">
-                      Articles
-                    </Link>
-                  </li>{" "}
-                </>
-              ) : (
-                <>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="/post/list">
-                      Programming
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="/post/list">
-                      LostArk
-                    </Link>
-                  </li>
-                </>
-              )}
-
-              {status === "authenticated" && data.user.email === email ? (
-                <li className="nav-item">
-                  <Link className="nav-link" href="/post">
-                    Posting
-                  </Link>
-                </li>
-              ) : (
-                <></>
-              )}
-            </ul>
-          </div>
-        </div>
-      </nav> */}
     </div>
   );
 }

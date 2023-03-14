@@ -87,135 +87,199 @@ export default function Home({ backgroundUrl }: any) {
   useEffect(() => {
     setMounted(true);
   }, []);
+
   return mount ? (
     <>
-      {/* margin-bottom 적용되는지 확인하기  // 원래 스타일 header태그에 margin-bottom : 10px*/}
-      <header className="py-5 bg-image-full mb-5">
-        {/* <div className="text-center my-5"> */}
-        <div className="text-center">
-          <Image
-            className="img-fluid rounded-circle mb-4"
-            src={kuku}
-            alt="쿠크 안뇽"
-            width={100}
-            height={100}
-          />
-          <h1 className="text-white fs-3 fw-bolder">
-            <p>augusstt06&apos;s Blog</p>
-          </h1>
-          <p className="text-white-50 mb-0">개발과 취미생활</p>
+      <header id="header" className="header">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="text-container">
+                <h1 className="h1-large">
+                  To become a Front-End Developer
+                  {/* I love to create beautiful and efficient websites */}
+                </h1>
+                <a className="btn-solid-lg page-scroll" href="#about">
+                  Discover
+                </a>
+                <a className="btn-outline-lg page-scroll" href="#contact">
+                  <i className="fas fa-user"></i>Contact Me
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
-      {/* -------태크 스택 소개 ------*/}
-
-      <section className="page-section" id="services">
-        <div className="container px-4 px-lg-5">
-          <h1 className="text-center mt-0">
-            <em>Tech Stacks</em>
-          </h1>
-
-          <hr className="divider" />
-          <h3 className="text-center mt-0">
-            <em>FrameWork</em>
-          </h3>
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            {framework_stack.map((data) => (
-              <div className="col-lg-3 col-md-6 text-center" key={data.name}>
-                <div className="mt-5">
-                  <div className="mb-2">
-                    <i className="bi-gem fs-1 text-primary"></i>
-                  </div>
-                  <a>{data.image}</a>
-                  <h3 className="h4 mb-2">{data.name}</h3>
-                  <p className="text-muted mb-0">{data.introduction}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <h3 className="text-center mt-0">
-            <em>Language</em>
-          </h3>
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            {language_stack.map((data) => (
-              <div className="col-lg-3 col-md-6 text-center" key={data.name}>
-                <div className="mt-5">
-                  <div className="mb-2">
-                    <i className="bi-gem fs-1 text-primary"></i>
-                  </div>
-                  {data.image}
-                  <h3 className="h4 mb-2">{data.name}</h3>
-                  <p className="text-muted mb-0">{data.introduction}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ------------------------- */}
-
-      {/* 자기 소개 및 간단한 제작 동기*/}
-      <section className="py-5">
-        <div className="container my-5">
-          <div className="row justify-content-center">
-            <div className="col-lg-6">
-              <h2>To become a Front-End developer</h2>
-              <p className="lead">
-                안녕하세요 프론트엔드 개발 공부를 하고있는 대학생입니다.
-                <br />
-              </p>
-              <p className="mb-0">
-                The universe is almost 14 billion years old, and, wow! Life had
-                no problem starting here on Earth! I think it would be
-                inexcusably egocentric of us to suggest that alone in the
-                universe.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="py-5 bg-image-full">
-        {/* <div style="height: 20rem"></div> */}
-        <div></div>
-      </div>
-
-      <section className="py-5">
-        <div className="container my-5">
-          <div className="row justify-content-center">
-            <div className="col-lg-6">
-              <h2>Engaging Background Images</h2>
-              <p className="lead">
-                The background images used in this template are sourced from
-                Unsplash and are open source and free to use.
-              </p>
-              <p className="mb-0">
-                I can tell you how many people say they were turned off from
-                science because of a science teacher that completely sucked out
-                all the inspiration and enthusiasm they had for the course.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-5 bg-dark">
+      <div id="about" className="basic-1 bg-gray">
         <div className="container">
-          <p className="m-0 text-center text-white">
-            Copyright &copy; March 2023
-          </p>
+          <div className="row">
+            <div className="col-lg-4">
+              <div className="text-container first">
+                <h2>Hi there I&#39m Mark,</h2>
+                <p>
+                  And I love to create beautiful and efficient websites for my
+                  customers. I love going through the entire process with the
+                  customer from concept, to design and then development and
+                  launch
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="text-container second">
+                <div className="time">2019 - PRESENT</div>
+                <h6>Freelance Web Developer</h6>
+                <p>Working happily on my own web projects</p>
+                <div className="time">2018 - 2019</div>
+                <h6>Lead Web Developer</h6>
+                <p>Beautiful project for a major digital agency</p>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="text-container third">
+                <div className="time">2017 - 2018</div>
+                <h6>Senior Web Designer</h6>
+                <p>Inhouse web designer for ecommerce firm</p>
+                <div className="time">2016 - 2017</div>
+                <h6>Junior Web Designer</h6>
+                <p>Junior web designer for small web agency</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-      <style jsx>
-        {`
-          header {
-            background-image: url(${backgroundUrl});
-            height: 40vh;
-          }
-        `}
-      </style>
+      </div>
     </>
   ) : (
     <>Page Loading...</>
   );
+  // return mount ? (
+  //   <>
+  //     {/* margin-bottom 적용되는지 확인하기  // 원래 스타일 header태그에 margin-bottom : 10px*/}
+  //     <header className="py-5 bg-image-full mb-5">
+  //       {/* <div className="text-center my-5"> */}
+  //       <div className="text-center">
+  //         <Image
+  //           className="img-fluid rounded-circle mb-4"
+  //           src={kuku}
+  //           alt="쿠크 안뇽"
+  //           width={100}
+  //           height={100}
+  //         />
+  //         <h1 className="text-white fs-3 fw-bolder">
+  //           <p>augusstt06&apos;s Blog</p>
+  //         </h1>
+  //         <p className="text-white-50 mb-0">개발과 취미생활</p>
+  //       </div>
+  //     </header>
+  //     {/* -------태크 스택 소개 ------*/}
+
+  //     <section className="page-section" id="services">
+  //       <div className="container px-4 px-lg-5">
+  //         <h1 className="text-center mt-0">
+  //           <em>Tech Stacks</em>
+  //         </h1>
+
+  //         <hr className="divider" />
+  //         <h3 className="text-center mt-0">
+  //           <em>FrameWork</em>
+  //         </h3>
+  //         <div className="row gx-4 gx-lg-5 justify-content-center">
+  //           {framework_stack.map((data) => (
+  //             <div className="col-lg-3 col-md-6 text-center" key={data.name}>
+  //               <div className="mt-5">
+  //                 <div className="mb-2">
+  //                   <i className="bi-gem fs-1 text-primary"></i>
+  //                 </div>
+  //                 <a>{data.image}</a>
+  //                 <h3 className="h4 mb-2">{data.name}</h3>
+  //                 <p className="text-muted mb-0">{data.introduction}</p>
+  //               </div>
+  //             </div>
+  //           ))}
+  //         </div>
+
+  //         <h3 className="text-center mt-0">
+  //           <em>Language</em>
+  //         </h3>
+  //         <div className="row gx-4 gx-lg-5 justify-content-center">
+  //           {language_stack.map((data) => (
+  //             <div className="col-lg-3 col-md-6 text-center" key={data.name}>
+  //               <div className="mt-5">
+  //                 <div className="mb-2">
+  //                   <i className="bi-gem fs-1 text-primary"></i>
+  //                 </div>
+  //                 {data.image}
+  //                 <h3 className="h4 mb-2">{data.name}</h3>
+  //                 <p className="text-muted mb-0">{data.introduction}</p>
+  //               </div>
+  //             </div>
+  //           ))}
+  //         </div>
+  //       </div>
+  //     </section>
+  //     {/* ------------------------- */}
+
+  //     {/* 자기 소개 및 간단한 제작 동기*/}
+  //     <section className="py-5">
+  //       <div className="container my-5">
+  //         <div className="row justify-content-center">
+  //           <div className="col-lg-6">
+  //             <h2>To become a Front-End developer</h2>
+  //             <p className="lead">
+  //               안녕하세요 프론트엔드 개발 공부를 하고있는 대학생입니다.
+  //               <br />
+  //             </p>
+  //             <p className="mb-0">
+  //               The universe is almost 14 billion years old, and, wow! Life had
+  //               no problem starting here on Earth! I think it would be
+  //               inexcusably egocentric of us to suggest that alone in the
+  //               universe.
+  //             </p>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+
+  //     <div className="py-5 bg-image-full">
+  //       {/* <div style="height: 20rem"></div> */}
+  //       <div></div>
+  //     </div>
+
+  //     <section className="py-5">
+  //       <div className="container my-5">
+  //         <div className="row justify-content-center">
+  //           <div className="col-lg-6">
+  //             <h2>Engaging Background Images</h2>
+  //             <p className="lead">
+  //               The background images used in this template are sourced from
+  //               Unsplash and are open source and free to use.
+  //             </p>
+  //             <p className="mb-0">
+  //               I can tell you how many people say they were turned off from
+  //               science because of a science teacher that completely sucked out
+  //               all the inspiration and enthusiasm they had for the course.
+  //             </p>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+
+  //     <footer className="py-5 bg-dark">
+  //       <div className="container">
+  //         <p className="m-0 text-center text-white">
+  //           Copyright &copy; March 2023
+  //         </p>
+  //       </div>
+  //     </footer>
+  //     <style jsx>
+  //       {`
+  //         header {
+  //           background-image: url(${backgroundUrl});
+  //           height: 40vh;
+  //         }
+  //       `}
+  //     </style>
+  //   </>
+  // ) : (
+  //   <>Page Loading...</>
+  // );
 }
