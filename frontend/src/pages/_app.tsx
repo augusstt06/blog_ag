@@ -2,7 +2,9 @@ import type { AppProps } from "next/app";
 import { wrapper } from "@/store";
 import { SessionProvider } from "next-auth/react";
 import Layout from "@/layout";
-import "../styles/nav.css";
+
+import "../styles/global.css";
+import "../styles/bootstrap.css";
 import "react-quill/dist/quill.snow.css";
 import "highlight.js/styles/atom-one-dark.css";
 
